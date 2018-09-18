@@ -257,9 +257,11 @@ namespace Nop.Services.Media
         /// <returns>Local picture thumb path</returns>
         protected virtual string GetThumbUrl(string thumbFileName, string storeLocation = null)
         {
+            var storeContext = EngineContext.Current.Resolve<IStoreContext>();
+
             storeLocation = !string.IsNullOrEmpty(storeLocation)
                                     ? storeLocation
-                                    : _webHelper.GetStoreLocation();
+                                    : _webHelper.GetStoreLocation(storeContext.CurrentStore.SslEnabled);
             var url = storeLocation + "images/thumbs/";
 
             if (_mediaSettings.MultipleThumbDirectories)

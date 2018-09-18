@@ -15,6 +15,7 @@ using Nop.Services.Catalog;
 using Nop.Services.Configuration;
 using Nop.Services.Events;
 using Nop.Services.Seo;
+using Nop.Services.Stores;
 
 namespace Nop.Services.Media
 {
