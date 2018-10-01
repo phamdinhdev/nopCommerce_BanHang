@@ -14,12 +14,6 @@
 
     @if (Model.FreeShippingNotificationEnabled && Model.IsFreeShipping)
     {
-        @if (Model.ProductAttributes.Count == 0)
-        {
-            <script asp-location="Footer">
-                $(".free-shipping").addClass("visible");
-            </script>
-        }
         <div class="free-shipping">@T("Products.FreeShipping")</div>
     }
     @if (!string.IsNullOrWhiteSpace(Model.DeliveryDate))
