@@ -475,13 +475,3 @@
         </script>
     }
 }
-else
-{
-    <script asp-location="Footer">
-        $(document).ready(function() {
-            $(document).trigger({ type: "product_attributes_changed", changedData: {
-                isFreeShipping: true
-            } });
-        });
-    </script>
-}

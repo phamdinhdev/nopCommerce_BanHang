@@ -5,9 +5,9 @@
     <script asp-location="Footer">
         $(document).on("product_attributes_changed", function (data) {
             if (data.changedData.isFreeShipping) {
-                $(".free-shipping").addClass("visible");
+                $(".free-shipping").removeClass("invisible");
             } else {
-                $(".free-shipping").removeClass("visible");
+                $(".free-shipping").addClass("invisible");
             }
         });
     </script>
