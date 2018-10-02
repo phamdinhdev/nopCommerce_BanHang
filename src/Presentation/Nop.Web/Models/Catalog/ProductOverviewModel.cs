@@ -20,7 +20,8 @@ namespace Nop.Web.Models.Catalog
         public string ShortDescription { get; set; }
         public string FullDescription { get; set; }
         public string SeName { get; set; }
-
+        public string AffiliateUrl { get; set; }
+        public bool IsAffiliateProduct { get; set; }
         public string Sku { get; set; }
 
         public ProductType ProductType { get; set; }
@@ -36,7 +37,7 @@ namespace Nop.Web.Models.Catalog
         //price
         public ProductReviewOverviewModel ReviewOverviewModel { get; set; }
 
-		#region Nested Classes
+        #region Nested Classes
 
         public partial class ProductPriceModel : BaseNopModel
         {
@@ -65,6 +66,6 @@ namespace Nop.Web.Models.Catalog
             public bool DisplayTaxShippingInfo { get; set; }
         }
 
-		#endregion
+        #endregion
     }
 }

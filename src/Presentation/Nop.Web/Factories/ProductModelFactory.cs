@@ -321,7 +321,7 @@ namespace Nop.Web.Factories
                         if (finalPriceWithoutDiscountBase != finalPriceWithDiscountBase)
                             strikeThroughPrice = finalPriceWithoutDiscount;
 
-                        if(strikeThroughPrice > decimal.Zero)
+                        if (strikeThroughPrice > decimal.Zero)
                             priceModel.OldPrice = _priceFormatter.FormatPrice(strikeThroughPrice);
 
                         priceModel.Price = _priceFormatter.FormatPrice(finalPriceWithDiscount);
@@ -417,7 +417,7 @@ namespace Nop.Web.Factories
                     var finalPrice = _currencyService.ConvertFromPrimaryStoreCurrency(finalPriceBase, _workContext.WorkingCurrency);
 
                     priceModel.OldPrice = null;
-                    priceModel.Price = string.Format(_localizationService.GetResource("Products.PriceRangeFrom"),_priceFormatter.FormatPrice(finalPrice));
+                    priceModel.Price = string.Format(_localizationService.GetResource("Products.PriceRangeFrom"), _priceFormatter.FormatPrice(finalPrice));
                     priceModel.PriceValue = finalPrice;
 
                     //PAngV baseprice (used in Germany)
@@ -647,7 +647,9 @@ namespace Nop.Web.Factories
 
             var model = new ProductDetailsModel.AddToCartModel
             {
-                ProductId = product.Id
+                ProductId = product.Id,
+                AffiliateUrl = product.AffiliateUrl,
+                IsAffiliateProduct = product.IsAffiliateProduct
             };
 
             if (updatecartitem != null)
@@ -1133,6 +1135,8 @@ namespace Nop.Web.Factories
                     FullDescription = _localizationService.GetLocalized(product, x => x.FullDescription),
                     SeName = _urlRecordService.GetSeName(product),
                     Sku = product.Sku,
+                    AffiliateUrl = product.AffiliateUrl,
+                    IsAffiliateProduct = product.IsAffiliateProduct,
                     ProductType = product.ProductType,
                     MarkAsNew = product.MarkAsNew &&
                         (!product.MarkAsNewStartDateTimeUtc.HasValue || product.MarkAsNewStartDateTimeUtc.Value < DateTime.UtcNow) &&
@@ -1192,6 +1196,8 @@ namespace Nop.Web.Factories
                 ProductType = product.ProductType,
                 ShowSku = _catalogSettings.ShowSkuOnProductDetailsPage,
                 Sku = product.Sku,
+                AffiliateUrl = product.AffiliateUrl,
+                IsAffiliateProduct = product.IsAffiliateProduct,
                 ShowManufacturerPartNumber = _catalogSettings.ShowManufacturerPartNumber,
                 FreeShippingNotificationEnabled = _catalogSettings.ShowFreeShippingNotification,
                 ManufacturerPartNumber = product.ManufacturerPartNumber,

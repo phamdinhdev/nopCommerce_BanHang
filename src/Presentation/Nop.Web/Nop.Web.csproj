@@ -27,25 +27,170 @@
     <Content Update="App_Data\DataProtectionKeys\*.xml" CopyToPublishDirectory="Never" />
 
     <Compile Remove="Plugins\**" />
+
+    <Content Remove="Plugins\**" />
     <EmbeddedResource Remove="Plugins\**" />
     <None Remove="Plugins\**" />
 
     <!-- We copy the entire \Plugins and \Themes directories.
 	    But we ignore cshtml and JSON files to avoid "Duplicate 'Content' items were included" error during publishing.
 	    We also can use "CheckForDuplicateItemsContinueOnError" as per https://github.com/dotnet/sdk/blob/master/src/Tasks/Microsoft.NET.Build.Tasks/build/Microsoft.NET.Sdk.DefaultItems.targets -->
-    <Content Include="Plugins\**" CopyToPublishDirectory="PreserveNewest" Exclude="Plugins\**\*.config;Plugins\**\*.cshtml;Plugins\**\*.json" />
     <Content Include="Themes\**" CopyToPublishDirectory="PreserveNewest" Exclude="Themes\**\*.config;Themes\**\*.cshtml;Themes\**\*.json" />
 
     <!-- We copy the \Logs directory -->
     <Content Include="Logs\**" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Plugins\DiscountRules.CustomerRoles\logo.jpg" />
+    <Content Include="Plugins\DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.deps.json" />
+    <Content Include="Plugins\DiscountRules.CustomerRoles\plugin.json" />
+    <Content Include="Plugins\ExchangeRate.EcbExchange\logo.jpg" />
+    <Content Include="Plugins\ExchangeRate.EcbExchange\Nop.Plugin.ExchangeRate.EcbExchange.deps.json" />
+    <Content Include="Plugins\ExchangeRate.EcbExchange\plugin.json" />
+    <Content Include="Plugins\ExternalAuth.Facebook\Content\facebookstyles.css" />
+    <Content Include="Plugins\ExternalAuth.Facebook\Content\Images\facebook-signing.png" />
+    <Content Include="Plugins\ExternalAuth.Facebook\logo.jpg" />
+    <Content Include="Plugins\ExternalAuth.Facebook\Nop.Plugin.ExternalAuth.Facebook.deps.json" />
+    <Content Include="Plugins\ExternalAuth.Facebook\plugin.json" />
+    <Content Include="Plugins\Payments.CheckMoneyOrder\logo.jpg" />
+    <Content Include="Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.deps.json" />
+    <Content Include="Plugins\Payments.CheckMoneyOrder\plugin.json" />
+    <Content Include="Plugins\Payments.Manual\logo.jpg" />
+    <Content Include="Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.deps.json" />
+    <Content Include="Plugins\Payments.Manual\plugin.json" />
+    <Content Include="Plugins\Payments.PayPalStandard\logo.jpg" />
+    <Content Include="Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.deps.json" />
+    <Content Include="Plugins\Payments.PayPalStandard\plugin.json" />
+    <Content Include="Plugins\Payments.Square\Content\styles.css" />
+    <Content Include="Plugins\Payments.Square\logo.png" />
+    <Content Include="Plugins\Payments.Square\Nop.Plugin.Payments.Square.deps.json" />
+    <Content Include="Plugins\Payments.Square\plugin.json" />
+    <Content Include="Plugins\Payments.Worldpay\cards.jpg" />
+    <Content Include="Plugins\Payments.Worldpay\logo.jpg" />
+    <Content Include="Plugins\Payments.Worldpay\Nop.Plugin.Payments.Worldpay.deps.json" />
+    <Content Include="Plugins\Payments.Worldpay\plugin.json" />
+    <Content Include="Plugins\Pickup.PickupInStore\logo.png" />
+    <Content Include="Plugins\Pickup.PickupInStore\Nop.Plugin.Pickup.PickupInStore.deps.json" />
+    <Content Include="Plugins\Pickup.PickupInStore\plugin.json" />
+    <Content Include="Plugins\Shipping.FixedByWeightByTotal\logo.jpg" />
+    <Content Include="Plugins\Shipping.FixedByWeightByTotal\Nop.Plugin.Shipping.FixedByWeightByTotal.deps.json" />
+    <Content Include="Plugins\Shipping.FixedByWeightByTotal\plugin.json" />
+    <Content Include="Plugins\Shipping.UPS\logo.jpg" />
+    <Content Include="Plugins\Shipping.UPS\Nop.Plugin.Shipping.UPS.deps.json" />
+    <Content Include="Plugins\Shipping.UPS\plugin.json" />
+    <Content Include="Plugins\Tax.FixedOrByCountryStateZip\logo.jpg" />
+    <Content Include="Plugins\Tax.FixedOrByCountryStateZip\Nop.Plugin.Tax.FixedOrByCountryStateZip.deps.json" />
+    <Content Include="Plugins\Tax.FixedOrByCountryStateZip\plugin.json" />
+    <Content Include="Plugins\Widgets.GoogleAnalytics\logo.jpg" />
+    <Content Include="Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.deps.json" />
+    <Content Include="Plugins\Widgets.GoogleAnalytics\plugin.json" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\license.txt" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\nivo-slider.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\sample-images\banner1.jpg" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\sample-images\banner2.jpg" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\bar\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\bar\bar.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\bar\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\bar\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\custom\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\custom\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\custom\custom.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\custom\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\dark\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\dark\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\dark\dark.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\dark\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\default\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\default\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\default\default.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\default\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\light\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\light\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\light\light.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\light\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\logo.jpg" />
+    <Content Include="Plugins\Widgets.NivoSlider\Nop.Plugin.Widgets.NivoSlider.deps.json" />
+    <Content Include="Plugins\Widgets.NivoSlider\plugin.json" />
+    <None Include="Plugins\DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.dll" />
+    <None Include="Plugins\DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.pdb" />
+    <None Include="Plugins\DiscountRules.CustomerRoles\Views\Configure.cshtml" />
+    <None Include="Plugins\DiscountRules.CustomerRoles\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\ExchangeRate.EcbExchange\Nop.Plugin.ExchangeRate.EcbExchange.dll" />
+    <None Include="Plugins\ExchangeRate.EcbExchange\Nop.Plugin.ExchangeRate.EcbExchange.pdb" />
+    <None Include="Plugins\ExternalAuth.Facebook\Nop.Plugin.ExternalAuth.Facebook.dll" />
+    <None Include="Plugins\ExternalAuth.Facebook\Nop.Plugin.ExternalAuth.Facebook.pdb" />
+    <None Include="Plugins\ExternalAuth.Facebook\Views\Configure.cshtml" />
+    <None Include="Plugins\ExternalAuth.Facebook\Views\PublicInfo.cshtml" />
+    <None Include="Plugins\ExternalAuth.Facebook\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.dll" />
+    <None Include="Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.pdb" />
+    <None Include="Plugins\Payments.CheckMoneyOrder\Views\Configure.cshtml" />
+    <None Include="Plugins\Payments.CheckMoneyOrder\Views\PaymentInfo.cshtml" />
+    <None Include="Plugins\Payments.CheckMoneyOrder\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.dll" />
+    <None Include="Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.pdb" />
+    <None Include="Plugins\Payments.Manual\Views\Configure.cshtml" />
+    <None Include="Plugins\Payments.Manual\Views\PaymentInfo.cshtml" />
+    <None Include="Plugins\Payments.Manual\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.dll" />
+    <None Include="Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.pdb" />
+    <None Include="Plugins\Payments.PayPalStandard\Views\Configure.cshtml" />
+    <None Include="Plugins\Payments.PayPalStandard\Views\PaymentInfo.cshtml" />
+    <None Include="Plugins\Payments.PayPalStandard\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Payments.Square\Nop.Plugin.Payments.Square.dll" />
+    <None Include="Plugins\Payments.Square\Nop.Plugin.Payments.Square.pdb" />
+    <None Include="Plugins\Payments.Square\RestSharp.dll" />
+    <None Include="Plugins\Payments.Square\Square.Connect.dll" />
+    <None Include="Plugins\Payments.Square\Views\Configure.cshtml" />
+    <None Include="Plugins\Payments.Square\Views\PaymentInfo.cshtml" />
+    <None Include="Plugins\Payments.Square\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Payments.Worldpay\Nop.Plugin.Payments.Worldpay.dll" />
+    <None Include="Plugins\Payments.Worldpay\Nop.Plugin.Payments.Worldpay.pdb" />
+    <None Include="Plugins\Payments.Worldpay\Views\Configure.cshtml" />
+    <None Include="Plugins\Payments.Worldpay\Views\Customer\_CreateOrUpdate.Worldpay.cshtml" />
+    <None Include="Plugins\Payments.Worldpay\Views\PaymentInfo.cshtml" />
+    <None Include="Plugins\Payments.Worldpay\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Pickup.PickupInStore\Nop.Plugin.Pickup.PickupInStore.dll" />
+    <None Include="Plugins\Pickup.PickupInStore\Nop.Plugin.Pickup.PickupInStore.pdb" />
+    <None Include="Plugins\Pickup.PickupInStore\Views\Configure.cshtml" />
+    <None Include="Plugins\Pickup.PickupInStore\Views\Create.cshtml" />
+    <None Include="Plugins\Pickup.PickupInStore\Views\Edit.cshtml" />
+    <None Include="Plugins\Pickup.PickupInStore\Views\_CreateOrUpdate.cshtml" />
+    <None Include="Plugins\Pickup.PickupInStore\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Shipping.FixedByWeightByTotal\Nop.Plugin.Shipping.FixedByWeightByTotal.dll" />
+    <None Include="Plugins\Shipping.FixedByWeightByTotal\Nop.Plugin.Shipping.FixedByWeightByTotal.pdb" />
+    <None Include="Plugins\Shipping.FixedByWeightByTotal\Views\AddRateByWeightByTotalPopup.cshtml" />
+    <None Include="Plugins\Shipping.FixedByWeightByTotal\Views\Configure.cshtml" />
+    <None Include="Plugins\Shipping.FixedByWeightByTotal\Views\EditRateByWeightByTotalPopup.cshtml" />
+    <None Include="Plugins\Shipping.FixedByWeightByTotal\Views\_ByWeightByTotal.cshtml" />
+    <None Include="Plugins\Shipping.FixedByWeightByTotal\Views\_CreateOrUpdateRateByWeightByTotal.cshtml" />
+    <None Include="Plugins\Shipping.FixedByWeightByTotal\Views\_FixedRate.cshtml" />
+    <None Include="Plugins\Shipping.FixedByWeightByTotal\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Shipping.UPS\Nop.Plugin.Shipping.UPS.dll" />
+    <None Include="Plugins\Shipping.UPS\Nop.Plugin.Shipping.UPS.pdb" />
+    <None Include="Plugins\Shipping.UPS\Views\Configure.cshtml" />
+    <None Include="Plugins\Shipping.UPS\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Tax.FixedOrByCountryStateZip\Nop.Plugin.Tax.FixedOrByCountryStateZip.dll" />
+    <None Include="Plugins\Tax.FixedOrByCountryStateZip\Nop.Plugin.Tax.FixedOrByCountryStateZip.pdb" />
+    <None Include="Plugins\Tax.FixedOrByCountryStateZip\Views\Configure.cshtml" />
+    <None Include="Plugins\Tax.FixedOrByCountryStateZip\Views\_CountryStateZip.cshtml" />
+    <None Include="Plugins\Tax.FixedOrByCountryStateZip\Views\_FixedRate.cshtml" />
+    <None Include="Plugins\Tax.FixedOrByCountryStateZip\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.dll" />
+    <None Include="Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.pdb" />
+    <None Include="Plugins\Widgets.GoogleAnalytics\Views\Configure.cshtml" />
+    <None Include="Plugins\Widgets.GoogleAnalytics\Views\PublicInfo.cshtml" />
+    <None Include="Plugins\Widgets.GoogleAnalytics\Views\_ViewImports.cshtml" />
+    <None Include="Plugins\Widgets.NivoSlider\Content\nivoslider\README" />
+    <None Include="Plugins\Widgets.NivoSlider\Nop.Plugin.Widgets.NivoSlider.dll" />
+    <None Include="Plugins\Widgets.NivoSlider\Nop.Plugin.Widgets.NivoSlider.pdb" />
+    <None Include="Plugins\Widgets.NivoSlider\Scripts\jquery.nivo.slider.js" />
+    <None Include="Plugins\Widgets.NivoSlider\Views\Configure.cshtml" />
+    <None Include="Plugins\Widgets.NivoSlider\Views\PublicInfo.cshtml" />
+    <None Include="Plugins\Widgets.NivoSlider\Views\_PublicInfo.SliderLine.cshtml" />
+    <None Include="Plugins\Widgets.NivoSlider\Views\_ViewImports.cshtml" />
 
     <None Update="Areas\Admin\sitemap.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Plugins\" />
   </ItemGroup>
 
   <!-- This target execute after "Build" target.

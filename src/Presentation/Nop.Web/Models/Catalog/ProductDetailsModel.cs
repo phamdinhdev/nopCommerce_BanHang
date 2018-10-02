@@ -24,7 +24,7 @@ namespace Nop.Web.Models.Catalog
             VendorModel = new VendorBriefInfoModel();
             Breadcrumb = new ProductBreadcrumbModel();
             ProductTags = new List<ProductTagModel>();
-            ProductSpecifications= new List<ProductSpecificationModel>();
+            ProductSpecifications = new List<ProductSpecificationModel>();
             ProductManufacturers = new List<ManufacturerBriefInfoModel>();
             ProductReviewOverview = new ProductReviewOverviewModel();
             TierPrices = new List<TierPriceModel>();
@@ -42,6 +42,9 @@ namespace Nop.Web.Models.Catalog
         public string MetaDescription { get; set; }
         public string MetaTitle { get; set; }
         public string SeName { get; set; }
+        public string AffiliateUrl { get; set; }
+
+        public bool IsAffiliateProduct { get; set; }
 
         public ProductType ProductType { get; set; }
 
@@ -145,6 +148,9 @@ namespace Nop.Web.Models.Catalog
 
             public bool DisableBuyButton { get; set; }
             public bool DisableWishlistButton { get; set; }
+            public string AffiliateUrl { get; set; }
+
+            public bool IsAffiliateProduct { get; set; }
 
             //rental
             public bool IsRental { get; set; }
@@ -292,7 +298,7 @@ namespace Nop.Web.Models.Catalog
             public PictureModel ImageSquaresPictureModel { get; set; }
 
             public string PriceAdjustment { get; set; }
-            
+
             public bool PriceAdjustmentUsePercentage { get; set; }
 
             public decimal PriceAdjustmentValue { get; set; }

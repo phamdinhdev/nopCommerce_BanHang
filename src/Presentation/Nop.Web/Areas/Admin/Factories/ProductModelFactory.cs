@@ -786,6 +786,8 @@ namespace Nop.Web.Areas.Admin.Factories
 
                 model.CreatedOn = _dateTimeHelper.ConvertToUserTime(product.CreatedOnUtc, DateTimeKind.Utc);
                 model.UpdatedOn = _dateTimeHelper.ConvertToUserTime(product.UpdatedOnUtc, DateTimeKind.Utc);
+                model.AffiliateUrl = product.AffiliateUrl;
+                model.IsAffiliateProduct = product.IsAffiliateProduct;
                 model.LastStockQuantity = product.StockQuantity;
                 model.ProductTags = string.Join(", ", _productTagService.GetAllProductTagsByProductId(product.Id).Select(tag => tag.Name));
                 model.ProductAttributesExist = _productAttributeService.GetAllProductAttributes().Any();
@@ -1460,7 +1462,7 @@ namespace Nop.Web.Areas.Admin.Factories
                 {
                     //fill in model values from the entity
                     var productTagModel = tag.ToModel<ProductTagModel>();
-                    
+
                     //fill in additional values (not existing in the entity)
                     productTagModel.ProductCount = _productTagService.GetProductCount(tag.Id, storeId: 0);
 
@@ -1490,7 +1492,7 @@ namespace Nop.Web.Areas.Admin.Factories
                 {
                     model = productTag.ToModel<ProductTagModel>();
                 }
-               
+
                 model.ProductCount = _productTagService.GetProductCount(productTag.Id, storeId: 0);
 
                 //define localized model configuration action
@@ -1683,7 +1685,7 @@ namespace Nop.Web.Areas.Admin.Factories
                 //fill in model values from the entity
                 if (model == null)
                 {
-                    model = tierPrice.ToModel<TierPriceModel>(); 
+                    model = tierPrice.ToModel<TierPriceModel>();
                 }
             }
 

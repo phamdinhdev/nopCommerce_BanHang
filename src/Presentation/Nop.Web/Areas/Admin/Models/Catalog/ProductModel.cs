@@ -14,7 +14,7 @@ namespace Nop.Web.Areas.Admin.Models.Catalog
     /// Represents a product model
     /// </summary>
     [Validator(typeof(ProductValidator))]
-    public partial class ProductModel : BaseNopEntityModel, 
+    public partial class ProductModel : BaseNopEntityModel,
         IAclSupportedModel, IDiscountSupportedModel, ILocalizedModel<ProductLocalizedModel>, IStoreMappingSupportedModel
     {
         #region Ctor
@@ -393,6 +393,12 @@ namespace Nop.Web.Areas.Admin.Models.Catalog
 
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.UpdatedOn")]
         public DateTime? UpdatedOn { get; set; }
+
+        [NopResourceDisplayName("Admin.Catalog.Products.Fields.AffiliateUrl")]
+        public string AffiliateUrl { get; set; }
+
+        [NopResourceDisplayName("Admin.Catalog.Products.Fields.IsAffiliateProduct")]
+        public bool IsAffiliateProduct { get; set; }
 
         public string PrimaryStoreCurrencyCode { get; set; }
 
